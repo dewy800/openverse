@@ -3,12 +3,12 @@
 </a>
 
 <p align="center">
-  <a href="https://github.com/orgs/WordPress/projects/3">Project Board</a> |
+  <a href="https://openverse.org">Openverse</a> | 
+  <a href="https://github.com/orgs/WordPress/projects/70">Projects</a> |
   <a href="https://make.wordpress.org/openverse/">Community Site</a> |
-  <a href="https://make.wordpress.org/chat/">#openverse @ Slack</a> |
+  <a href="https://make.wordpress.org/chat/">Chat (#openverse)</a> |
   <a href="https://make.wordpress.org/openverse/handbook/openverse-handbook/">Handbook</a> |
   <a href="https://make.wordpress.org/design/handbook/">Design Handbook</a> |
-  <a href="https://www.figma.com/file/w60dl1XPUvSaRncv1Utmnb/Openverse-Releases?node-id=0%3A1">Releases mockups</a> |
   <a href="https://www.figma.com/file/GIIQ4sDbaToCfFQyKMvzr8/Openverse-Design-Library?node-id=0%3A1">Design Library</a>
 </p>
 
