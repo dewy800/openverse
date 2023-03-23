@@ -17,16 +17,11 @@
       as="VLink"
       variant="plain"
       size="disabled"
-      class="caption-bold w-full justify-between px-4 py-3 text-dark-charcoal hover:bg-dark-charcoal-10"
+      class="caption-bold w-full justify-between gap-x-2 px-4 py-3 text-dark-charcoal hover:bg-dark-charcoal-10"
       :href="source.url"
     >
       {{ source.name }}
-      <VIcon
-        :icon-path="icons.externalLink"
-        :size="4"
-        :rtl-flip="true"
-        class="ms-2"
-      />
+      <VIcon :icon-path="icons.externalLink" :rtl-flip="true" />
     </VButton>
   </div>
 </template>
