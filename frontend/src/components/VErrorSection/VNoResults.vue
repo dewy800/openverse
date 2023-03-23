@@ -13,11 +13,13 @@
         :key="source.name"
         as="VLink"
         :href="source.url"
-        variant="secondary-bordered"
-        class="label-bold justify-between text-dark-charcoal md:justify-start md:gap-x-2"
+        variant="bordered-dark"
+        size="medium"
+        has-icon-end
+        class="label-bold justify-between md:justify-start"
       >
         {{ source.name }}
-        <VIcon :icon-path="externalLinkIcon" :size="4" rtl-flip />
+        <VIcon :icon-path="externalLinkIcon" :size="6" rtl-flip />
       </VButton>
     </div>
   </div>
