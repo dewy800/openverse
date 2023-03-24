@@ -13,7 +13,7 @@
         :key="source.name"
         as="VLink"
         :href="source.url"
-        variant="bordered-dark"
+        variant="bordered-white"
         size="medium"
         has-icon-end
         class="label-bold justify-between md:justify-start"
