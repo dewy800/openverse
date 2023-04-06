@@ -32,7 +32,7 @@
       v-if="showFilterHeader && isAnyFilterApplied"
       class="flex justify-between md:hidden"
     >
-      <VButton variant="filled-pink" size="medium" @click="$emit('close')">
+      <VButton variant="primary" @click="$emit('close')">
         {{ $t("filter-list.show") }}
       </VButton>
     </footer>

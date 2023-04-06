@@ -78,7 +78,7 @@
         <div class="flex flex-row items-center justify-end gap-4">
           <VButton
             v-if="allowCancel"
-            variant="bordered-dark"
+            variant="bordered-gray"
             size="medium"
             @click="handleCancel"
           >
@@ -92,10 +92,11 @@
             variant="filled-dark"
             size="medium"
             has-icon-end
+            show-external-icon
+            external-icon-size="6"
             :href="DMCA_FORM_URL"
           >
             {{ $t("media-details.content-report.form.dmca.open") }}
-            <VIcon :size="6" :icon-path="icons.externalLink" />
           </VButton>
           <VButton
             v-else
@@ -134,7 +135,6 @@ import {
 import type { AudioDetail, ImageDetail } from "~/types/media"
 
 import VButton from "~/components/VButton.vue"
-import VIcon from "~/components/VIcon/VIcon.vue"
 import VRadio from "~/components/VRadio/VRadio.vue"
 import VDmcaNotice from "~/components/VContentReport/VDmcaNotice.vue"
 import VReportDescForm from "~/components/VContentReport/VReportDescForm.vue"
@@ -146,7 +146,6 @@ export default defineComponent({
   name: "VContentReportForm",
   components: {
     VButton,
-    VIcon,
     VLink,
     VRadio,
     VDmcaNotice,

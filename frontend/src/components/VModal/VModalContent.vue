@@ -34,9 +34,8 @@
           >
             <VButton
               ref="closeButton"
-              size="medium"
-              variant="transparent-gray"
-              has-icon-end
+              size="disabled"
+              variant="plain"
               class="text-sr md:text-base md:text-white"
               @click="hide()"
             >
