@@ -1,5 +1,9 @@
 import { render, screen } from "@testing-library/vue"
+import { createLocalVue } from "@vue/test-utils"
+
 import VueI18n from "vue-i18n"
+
+import { createPinia, PiniaVuePlugin } from "~~/test/unit/test-utils/pinia"
 
 import VContentLink from "~/components/VContentLink/VContentLink.vue"
 
@@ -13,10 +17,18 @@ const i18n = new VueI18n({
 
 describe("VContentLink", () => {
   let options = {}
+  let localVue
+  let pinia
 
   beforeEach(() => {
+    localVue = createLocalVue()
+    localVue.use(PiniaVuePlugin)
+    pinia = createPinia()
+
     options = {
       props: { mediaType: "image", resultsCount: 123, to: "/images" },
+      localVue,
+      pinia,
       mocks: {
         $nuxt: {
           context: {
