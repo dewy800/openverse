@@ -3,6 +3,7 @@ import { useContext } from "@nuxtjs/composition-api"
 
 import type { Events, EventName } from "~/types/analytics"
 import { useUiStore } from "~/stores/ui"
+import { log } from "~/utils/console"
 
 /**
  * The `ctx` parameter must be supplied if using this composable outside the
@@ -58,6 +59,7 @@ export const useAnalytics = () => {
     name: T,
     payload: Events[T]
   ) => {
+    log(`Analytics event: ${name}`, payload)
     $plausible.trackEvent(name, {
       props: {
         ...isomorphicProps.value,

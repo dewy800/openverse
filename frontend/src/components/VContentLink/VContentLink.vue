@@ -9,6 +9,7 @@
         : 'cursor-not-allowed text-dark-charcoal/40'
     "
     @keydown.native.shift.tab.exact="$emit('shift-tab', $event)"
+    @mousedown.native="handleClick"
   >
     <div class="flex flex-col items-start md:flex-row md:items-center">
       <VIcon :icon-path="iconPath" />
@@ -26,10 +27,14 @@
 <script lang="ts">
 import { computed, defineComponent, PropType } from "vue"
 
+import { useAnalytics } from "~/composables/use-analytics"
+
 import { useI18nResultsCount } from "~/composables/use-i18n-utilities"
 import { AUDIO, IMAGE, SupportedMediaType } from "~/constants/media"
 
 import { defineEvent } from "~/types/emits"
+
+import useSearchType from "~/composables/use-search-type"
 
 import VIcon from "~/components/VIcon/VIcon.vue"
 import VLink from "~/components/VLink.vue"
@@ -77,11 +82,23 @@ export default defineComponent({
     const hasResults = computed(() => props.resultsCount > 0)
     const resultsCountLabel = computed(() => getI18nCount(props.resultsCount))
 
+    const { activeType } = useSearchType()
+    const analytics = useAnalytics()
+
+    const handleClick = () => {
+      analytics.sendCustomEvent("CHANGE_CONTENT_TYPE", {
+        previous: activeType.value,
+        next: props.mediaType,
+        component: "VContentLink",
+      })
+    }
+
     return {
       iconPath,
       imageIcon,
       resultsCountLabel,
       hasResults,
+      handleClick,
     }
   },
 })

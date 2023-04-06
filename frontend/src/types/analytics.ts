@@ -1,3 +1,4 @@
+import type { SearchType } from "~/constants/media"
 /**
  * compound type of all custom events sent from the site; Index with `EventName`
  * to get the type of the payload for a specific event.
@@ -22,6 +23,21 @@ export type Events = {
     set: string
     /** the identifier of the image */
     identifier: string
+  }
+  /**
+   * Description: Whenever a user changes the content type
+   * Questions:
+   *   - Which content types are most popular?
+   *   - Is there interest in the non-supported content types?
+   *   - Do users switch content types? Where in their journeys?
+   */
+  CHANGE_CONTENT_TYPE: {
+    /** The previously-set media type */
+    previous: SearchType
+    /** The new media type */
+    next: SearchType
+    /** The name of the Vue component used to switch content types. */
+    component: string
   }
 }
 
