@@ -32,6 +32,7 @@
             size="disabled"
             :aria-label="$t('browse-page.aria.license-explanation')"
             class="text-dark-charcoal-70"
+            type="button"
           >
             <VIcon :icon-path="icons.help" />
           </VButton>

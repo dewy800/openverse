@@ -1,6 +1,6 @@
 <template>
   <VButton
-    class="h-12 flex-shrink-0 gap-2"
+    class="group h-12 flex-shrink-0 gap-2"
     :class="showLabel ? 'w-auto gap-2 px-3' : 'w-12'"
     variant="action-menu"
     size="disabled"

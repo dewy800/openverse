@@ -1,7 +1,6 @@
 <template>
   <VButton
     :id="id"
-    type="button"
     variant="filled-dark"
     size="small"
     class="label-bold flex-shrink-0"

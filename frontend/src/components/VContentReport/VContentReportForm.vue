@@ -80,7 +80,7 @@
             v-if="allowCancel"
             variant="bordered-gray"
             size="medium"
-            class="description-bold"
+            class="label-bold"
             @click="handleCancel"
           >
             {{ $t("media-details.content-report.form.cancel") }}
@@ -92,7 +92,7 @@
             as="VLink"
             variant="filled-dark"
             size="medium"
-            class="description-bold"
+            class="label-bold"
             has-icon-end
             show-external-icon
             :external-icon-size="6"
@@ -108,7 +108,7 @@
             :focusable-when-disabled="true"
             variant="filled-dark"
             size="medium"
-            class="description-bold"
+            class="label-bold"
             :value="$t('media-details.content-report.form.submit')"
           >
             {{ $t("media-details.content-report.form.submit") }}
