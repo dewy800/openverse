@@ -1,19 +1,23 @@
 <template>
   <!-- @todo: Separate the absolute container from the link itself. -->
-  <VLink
-    class="time inline-flex flex-row items-center gap-2 rounded-sm p-2 pe-3 text-xs font-semibold text-dark-charcoal-70 hover:text-dark-charcoal"
-    v-bind="$attrs"
+  <VButton
+    as="VLink"
+    :href="href"
+    has-icon-start
+    variant="transparent-gray"
+    size="medium"
+    class="label-bold inline-flex"
   >
     <VIcon :icon-path="chevronIcon" :rtl-flip="true" />
     {{ $t("single-result.back") }}
-  </VLink>
+  </VButton>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue"
 
 import VIcon from "~/components/VIcon/VIcon.vue"
-import VLink from "~/components/VLink.vue"
+import VButton from "~/components/VButton.vue"
 
 import chevronIcon from "~/assets/icons/chevron-left.svg"
 
@@ -24,9 +28,14 @@ import chevronIcon from "~/assets/icons/chevron-left.svg"
 export default defineComponent({
   components: {
     VIcon,
-    VLink,
+    VButton,
   },
-  inheritAttrs: false,
+  props: {
+    href: {
+      type: String,
+      required: true,
+    },
+  },
   setup() {
     return { chevronIcon }
   },
