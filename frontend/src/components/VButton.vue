@@ -410,13 +410,6 @@ a.button {
   @apply border-tx bg-tx text-dark-charcoal-40;
 }
 
-.menu {
-  @apply border-tx bg-white text-dark-charcoal ring-offset-0;
-}
-.menu-pressed {
-  @apply border-tx bg-dark-charcoal text-white;
-}
-
 .action-menu {
   @apply border-tx bg-white text-dark-charcoal hover:border-dark-charcoal-20 group-focus-within:hover:border-tx;
 }
