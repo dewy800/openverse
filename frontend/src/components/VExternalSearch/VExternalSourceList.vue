@@ -39,8 +39,6 @@ import type { MediaType } from "~/constants/media"
 import VButton from "~/components/VButton.vue"
 import VCloseButton from "~/components/VCloseButton.vue"
 
-import caretDownIcon from "~/assets/icons/caret-down.svg"
-
 /**
  * This component renders a list of pre-populated links to additional sources
  * when there are insufficient or zero search results.
@@ -84,9 +82,6 @@ export default defineComponent({
 
     return {
       handleClick,
-      icons: {
-        caretDown: caretDownIcon,
-      },
     }
   },
 })
