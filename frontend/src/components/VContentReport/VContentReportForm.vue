@@ -93,7 +93,7 @@
             size="medium"
             has-icon-end
             show-external-icon
-            external-icon-size="6"
+            :external-icon-size="6"
             :href="DMCA_FORM_URL"
           >
             {{ $t("media-details.content-report.form.dmca.open") }}
