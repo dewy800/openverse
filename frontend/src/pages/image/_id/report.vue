@@ -24,7 +24,7 @@
         :href="`/image/${image.id}`"
         as="VLink"
         size="medium"
-        class="text-sr"
+        class="description-bold"
       >
         {{ $t("report.image-details") }}
       </VButton>
