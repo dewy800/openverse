@@ -77,6 +77,7 @@ export default defineComponent({
         url: sourceUrl,
         mediaType: props.mediaType,
         query: props.searchTerm,
+        component: "VExternalSourceList",
       })
     }
 

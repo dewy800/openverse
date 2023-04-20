@@ -67,6 +67,8 @@ export type Events = {
     mediaType: MediaType
     /** The search term */
     query: string
+    /** The component that triggered the event */
+    component: "VNoResults" | "VExternalSourceList"
   }
 }
 
