@@ -150,7 +150,7 @@ class SmithsonianDataIngester(ProviderDataIngester):
         # Parse out the necessary info from the record data into a dictionary.
         images = []
         if image_list := self._get_image_list(data):
-            if (foreign_landing_url := self._get_foreign_landing_url(data)) is None:
+            if not (foreign_landing_url := self._get_foreign_landing_url(data)):
                 return None
 
             meta_data = self._extract_meta_data(data)
@@ -290,10 +290,10 @@ class SmithsonianDataIngester(ProviderDataIngester):
             if image_data.get("type") != "Images" or usage != "CC0":
                 continue
 
-            if (image_url := image_data.get("content")) is None:
+            if not (image_url := image_data.get("content")):
                 continue
 
-            if (foreign_identifier := image_data.get("idsId")) is None:
+            if not (foreign_identifier := image_data.get("idsId")):
                 continue
 
             images.append(

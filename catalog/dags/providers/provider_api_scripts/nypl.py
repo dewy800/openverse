@@ -115,8 +115,7 @@ class NyplDataIngester(ProviderDataIngester):
             captures = [captures]
         images = []
         for capture in captures:
-            image_id = capture.get("imageID", {}).get("$")
-            if image_id is None:
+            if not (image_id := capture.get("imageID", {}).get("$")):
                 continue
 
             image_link = capture.get("imageLinks", {}).get("imageLink", [])
@@ -124,9 +123,9 @@ class NyplDataIngester(ProviderDataIngester):
             if not image_url:
                 continue
 
-            foreign_landing_url = capture.get("itemLink", {}).get("$")
-            license_url = capture.get("rightsStatementURI", {}).get("$")
-            if not foreign_landing_url or license_url is None:
+            if not (foreign_landing_url := capture.get("itemLink", {}).get("$")):
+                continue
+            if not (license_url := capture.get("rightsStatementURI", {}).get("$")):
                 continue
 
             image_data = {

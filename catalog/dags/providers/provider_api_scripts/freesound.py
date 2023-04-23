@@ -199,7 +199,7 @@ class FreesoundDataIngester(ProviderDataIngester):
 
         # If unable to get filesize from the preview, skip this audio
         # This may happen if the preview 404s
-        if (filesize := self._get_audio_file_size(preview_url)) is None:
+        if not (filesize := self._get_audio_file_size(preview_url)):
             return None, None
 
         main_file = {
@@ -235,8 +235,7 @@ class FreesoundDataIngester(ProviderDataIngester):
         if not foreign_identifier:
             return None
 
-        item_license = self._get_license(media_data)
-        if item_license is None:
+        if not (item_license := self._get_license(media_data)):
             return None
 
         # We use the mp3-hq preview url as `audio_url` as the main url
@@ -250,7 +249,7 @@ class FreesoundDataIngester(ProviderDataIngester):
                 f"Unable to get file size for {foreign_landing_url}, skipping"
             )
             return None
-        if main_audio is None:
+        if not main_audio:
             return None
 
         creator, creator_url = self._get_creator_data(media_data)

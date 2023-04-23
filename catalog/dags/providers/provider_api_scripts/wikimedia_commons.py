@@ -311,8 +311,7 @@ class WikimediaCommonsDataIngester(ProviderDataIngester):
         if license_info.url is None:
             return None
 
-        media_url = media_info.get("url")
-        if media_url is None:
+        if not (media_url := media_info.get("url")):
             return None
 
         creator, creator_url = self.extract_creator_info(media_info)

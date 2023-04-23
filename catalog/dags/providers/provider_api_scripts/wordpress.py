@@ -93,10 +93,10 @@ class WordPressDataIngester(ProviderDataIngester):
 
     def get_record_data(self, data):
         """Extract data for individual item."""
-        if (foreign_identifier := data.get("slug")) is None:
+        if not (foreign_identifier := data.get("slug")):
             return None
 
-        if (foreign_landing_url := data.get("link")) is None:
+        if not (foreign_landing_url := data.get("link")):
             return None
 
         try:
@@ -109,7 +109,7 @@ class WordPressDataIngester(ProviderDataIngester):
             return None
 
         image_url, height, width, filesize = self._get_file_info(media_details)
-        if image_url is None:
+        if not image_url:
             return None
 
         title = self._get_title(data)

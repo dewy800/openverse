@@ -70,7 +70,7 @@ class VictoriaDataIngester(ProviderDataIngester):
         self.RECORDS_IDS.add(object_id)
         foreign_landing_url = f"{self.LANDING_PAGE}{object_id}"
 
-        if (media_data := data.get("media")) is None:
+        if not (media_data := data.get("media")):
             return None
         images = self._get_images(media_data)
         if len(images) == 0:
@@ -101,7 +101,7 @@ class VictoriaDataIngester(ProviderDataIngester):
                 media
             )
             license_info = VictoriaDataIngester._get_license_info(media)
-            if image_url is None or image_id is None or license_info is None:
+            if not image_url or not image_id or not license_info:
                 continue
             creator = VictoriaDataIngester._get_creator(media)
 

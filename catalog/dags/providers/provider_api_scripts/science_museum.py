@@ -111,23 +111,19 @@ class ScienceMuseumDataIngester(ProviderDataIngester):
         if id_ in self.RECORD_IDS:
             return None
         self.RECORD_IDS.add(id_)
-        foreign_landing_url = record.get("links", {}).get("self")
-        if foreign_landing_url is None:
+        if not (foreign_landing_url := record.get("links", {}).get("self")):
             return None
-        attributes = record.get("attributes")
-        if attributes is None:
+        if not (attributes := record.get("attributes")):
             return None
         title = attributes.get("summary_title")
         creator = self._get_creator_info(attributes)
 
         metadata = self._get_metadata(attributes)
-        multimedia = attributes.get("multimedia")
-        if not multimedia:
+        if not (multimedia := attributes.get("multimedia")):
             return None
         images = []
         for image_data in multimedia:
-            foreign_id = image_data.get("admin", {}).get("uid")
-            if foreign_id is None:
+            if not (foreign_id := image_data.get("admin", {}).get("uid")):
                 continue
             processed = image_data.get("processed")
             (
@@ -136,11 +132,10 @@ class ScienceMuseumDataIngester(ProviderDataIngester):
                 width,
                 filetype,
             ) = self._get_image_info(processed)
-            if image_url is None:
+            if not image_url:
                 continue
 
-            license_pair = self._get_license(image_data)
-            if license_pair is None:
+            if not (license_pair := self._get_license(image_data)):
                 # some items do not return license anywhere, but in the UI
                 # they look like CC
                 continue
