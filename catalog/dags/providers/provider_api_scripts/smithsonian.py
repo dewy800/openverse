@@ -299,7 +299,7 @@ class SmithsonianDataIngester(ProviderDataIngester):
             images.append(
                 {
                     **partial_image_data,
-                    "image_url": image_url,
+                    "url": image_url,
                     "foreign_identifier": foreign_identifier,
                 }
             )

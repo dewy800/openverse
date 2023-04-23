@@ -122,7 +122,7 @@ class WordPressDataIngester(ProviderDataIngester):
             "creator_url": author_url,
             "foreign_identifier": foreign_identifier,
             "foreign_landing_url": foreign_landing_url,
-            "image_url": image_url,
+            "url": image_url,
             "height": height,
             "width": width,
             "filesize": filesize,

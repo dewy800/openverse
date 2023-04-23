@@ -99,7 +99,7 @@ class StockSnapDataIngester(ProviderDataIngester):
             "creator_url": creator_url,
             "foreign_identifier": foreign_id,
             "foreign_landing_url": foreign_landing_url,
-            "image_url": image_url,
+            "url": image_url,
             "filesize": filesize,
             "filetype": "jpg",
             "height": height,

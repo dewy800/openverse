@@ -107,7 +107,7 @@ class VictoriaDataIngester(ProviderDataIngester):
 
             image: ImageDetails = {
                 "foreign_identifier": image_id,
-                "image_url": image_url,
+                "url": image_url,
                 "height": height,
                 "width": width,
                 "license_info": license_info,

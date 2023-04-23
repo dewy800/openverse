@@ -93,7 +93,7 @@ class NappyDataIngester(ProviderDataIngester):
 
         return {
             "foreign_landing_url": foreign_landing_url,
-            "image_url": image_url,
+            "url": image_url,
             "thumbnail_url": thumbnail_url,
             "license_info": self.license_info,
             "foreign_identifier": foreign_identifier,

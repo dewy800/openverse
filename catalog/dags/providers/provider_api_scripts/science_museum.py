@@ -131,12 +131,12 @@ class ScienceMuseumDataIngester(ProviderDataIngester):
                 continue
             processed = image_data.get("processed")
             (
-                image_url,
+                url,
                 height,
                 width,
                 filetype,
             ) = self._get_image_info(processed)
-            if image_url is None:
+            if url is None:
                 continue
 
             license_pair = self._get_license(image_data)
@@ -149,7 +149,7 @@ class ScienceMuseumDataIngester(ProviderDataIngester):
             image = {
                 "foreign_identifier": foreign_id,
                 "foreign_landing_url": foreign_landing_url,
-                "image_url": image_url,
+                "url": url,
                 "height": height,
                 "width": width,
                 "filetype": filetype,
@@ -173,12 +173,12 @@ class ScienceMuseumDataIngester(ProviderDataIngester):
         return creator_info
 
     @staticmethod
-    def check_url(image_url: str | None) -> str | None:
-        if not image_url:
+    def check_url(url: str | None) -> str | None:
+        if not url:
             return None
-        if image_url.startswith("http"):
-            return image_url
-        return f"https://coimages.sciencemuseumgroup.org.uk/images/{image_url}"
+        if url.startswith("http"):
+            return url
+        return f"https://coimages.sciencemuseumgroup.org.uk/images/{url}"
 
     @staticmethod
     def _get_dimensions(image_data: dict) -> tuple[int | None, int | None]:
@@ -206,11 +206,11 @@ class ScienceMuseumDataIngester(ProviderDataIngester):
         if image_data is None:
             image_data = processed.get("medium", {})
 
-        image_url = ScienceMuseumDataIngester.check_url(image_data.get("location"))
-        if image_url:
+        url = ScienceMuseumDataIngester.check_url(image_data.get("location"))
+        if url:
             filetype = image_data.get("format")
             height, width = ScienceMuseumDataIngester._get_dimensions(image_data)
-        return image_url, height, width, filetype
+        return url, height, width, filetype
 
     @staticmethod
     def _get_first_list_value(key: str, attributes: dict) -> str | None:

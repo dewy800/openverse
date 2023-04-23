@@ -110,7 +110,7 @@ class PhylopicDataIngester(ProviderDataIngester):
             "license_info": get_license_info(license_url=license_url),
             "foreign_identifier": uid,
             "foreign_landing_url": foreign_url,
-            "image_url": img_url,
+            "url": img_url,
             "title": title,
             "creator": creator,
             "creator_url": creator_url,

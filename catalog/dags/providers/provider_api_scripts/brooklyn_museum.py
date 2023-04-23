@@ -127,7 +127,7 @@ class BrooklynMuseumDataIngester(ProviderDataIngester):
             images.append(
                 {
                     "foreign_landing_url": foreign_url,
-                    "image_url": image_url,
+                    "url": image_url,
                     "license_info": license_info,
                     "foreign_identifier": foreign_id,
                     "width": width,

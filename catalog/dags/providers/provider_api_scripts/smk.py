@@ -108,7 +108,7 @@ class SmkDataIngester(ProviderDataIngester):
             images.append(
                 {
                     "id": image_id,
-                    "image_url": image_url,
+                    "url": image_url,
                     "thumbnail_url": thumbnail_url,
                     "height": height,
                     "width": width,
