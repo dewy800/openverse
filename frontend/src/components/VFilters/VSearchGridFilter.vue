@@ -10,9 +10,8 @@
       <VButton
         v-show="isAnyFilterApplied"
         id="clear-filter-button"
-        variant="transparent-gray"
-        size="medium"
-        class="label-bold !absolute end-0 text-pink"
+        variant="plain"
+        class="label-bold absolute end-0 px-4 py-1 text-pink hover:ring hover:ring-pink"
         @click="clearFilters"
       >
         {{ $t("filter-list.clear") }}

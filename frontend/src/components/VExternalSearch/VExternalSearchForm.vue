@@ -40,10 +40,9 @@
       :aria-controls="
         isMd ? 'external-sources-popover' : 'external-sources-modal'
       "
-      variant="bordered-gray"
-      size="medium"
-      class="caption-regular ms-2 min-w-max"
-      has-icon-end
+      variant="dropdown-label"
+      size="disabled"
+      class="caption-regular ms-2 min-w-max gap-1 px-3 py-1 pe-1 text-dark-charcoal focus-visible:border-tx"
       @click="onTriggerClick"
       >{{ $t("external-sources.button").toString()
       }}<VIcon

@@ -3,7 +3,7 @@
     variant="transparent-gray"
     size="medium"
     has-icon-end
-    class="description-bold text-dark-charcoal-70 md:text-base"
+    class="label-bold"
   >
     <span class="md:hidden">{{
       $t("media-details.content-report.short")
